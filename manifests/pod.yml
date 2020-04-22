@@ -1,0 +1,22 @@
+Deploymet   
+
+
+Rolling update 
+
+ 
+roll back
+
+oc rollout history deployment/deployment_name -n namespace
+
+
+
+Headless service
+
+nslookup service_host_name.namespace.svc it will bring service IP. (Normal service )
+
+
+nslookup service_host_name.namespace.svc. ..it will bring pod IP ( Headless Service )
+
+
+
+  
