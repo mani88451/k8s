@@ -1,22 +1,89 @@
-Deploymet   
 
-
-Rolling update 
-
- 
-roll back
-
-oc rollout history deployment/deployment_name -n namespace
-
-
-
-Headless service
-
-nslookup service_host_name.namespace.svc it will bring service IP. (Normal service )
-
-
-nslookup service_host_name.namespace.svc. ..it will bring pod IP ( Headless Service )
-
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: http-echo
+spec:
+  containers:
+  - env:
+    - name: TCP_PORT
+      value: "8080"
+    - name: NODE_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.nodeName
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: POD_NAMESPACE
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.namespace
+    - name: POD_IP
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: status.podIP
+    - name: SERVICE_ACCOUNT
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.serviceAccountName
+    image: files.caas.ford.com/http-echo/http-echo:1.0.0
+    imagePullPolicy: IfNotPresent
+    name: http-echo
+    ports:
+    - containerPort: 8080
+      name: http
+      protocol: TCP
+    resources:
+      limits:
+        cpu: 300m
+        memory: 1Gi
+      requests:
+        cpu: 100m
+        memory: 500Mi
+    securityContext:
+      capabilities:
+        drop:
+        - KILL
+        - MKNOD
+        - SETGID
+        - SETUID
+      runAsUser: 1001120000
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-4fkhd
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  imagePullSecrets:
+  - name: http-echo-pull-pull-secret
+  #nodeName: worker19.caas.ford.com
+  #nodeSelector:
+   # kubernetes.io/hostname: worker19.caas.ford.com
+   # node-role.ford/compute: "true"
+  priority: 0
+  securityContext:
+    fsGroup: 1001120000
+    seLinuxOptions:
+      level: s0:c33,c32
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoSchedule
+    key: node.kubernetes.io/memory-pressure
+    operator: Exists
+  volumes:
+  - name: default-token-4fkhd
+    secret:
+      defaultMode: 420
+      secretName: default-token-4fkhd
 
 
   
