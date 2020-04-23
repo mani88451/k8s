@@ -6,8 +6,9 @@
 # contents
 
 - [Pod Deployment](#pod-deployment)
-- [Deplyment with rolling update and roll back](#deployment-with-rolling-update-and-roll-back)
 - [Contents](#contents)
+- [Deployment with rolling update and roll back](#deployment-with-rolling-update-and-roll-back)
+
 
 
 
@@ -58,7 +59,7 @@ ping 10.128.247.126
 [Back to Top](#contents)
 
 
-### Deplyment with rolling update and roll back
+### Deployment with rolling update and roll back
 
 
 
