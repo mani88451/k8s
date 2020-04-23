@@ -61,6 +61,13 @@ ping 10.128.247.126
 
 ### Deployment with rolling update and roll back
 
+To deploy the deployment run the following command
+
+```
+oc create -f http-echo-deploy.yml -n namespace
+
+```
+
 
 
 [Back to Top](#contents)
