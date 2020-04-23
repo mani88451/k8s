@@ -203,4 +203,9 @@ REVISION  CHANGE-CAUSE
 
 Now we can do roll back to previous version
 
+```
+oc rollout undo deployment/http-echo-deploy --to-revision=1 -n test1234
+```
+
+
 [Back to Top](#contents)
