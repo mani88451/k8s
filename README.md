@@ -9,6 +9,9 @@
 - [Contents](#contents)
 - [Deployment with rolling update and roll back](#deployment-with-rolling-update-and-roll-back)
 - [Stateffullset Deployment](#stateffullset-deployment)
+- [Job](#job)
+- [Cron Job](#cron-job)
+- [Refference](#refference)
 
 
 
@@ -334,6 +337,38 @@ oc create -f http-echo-route.yml -n namespace
 
 ```
 
+### Job
+
+To create a normal task job
+
+```
+oc create -f job.yml -n namespace
+```
+To create job based on some scripts
+
+```
+oc create -f job-scrpt.yml -n namespace
+
+```
+
+
+### Cron Job
+
+To create a normal task cron job
+
+```
+oc create -f cron-job.yml -n namespace
+```
+To create cron job based on some scripts
+
+```
+oc create -f cron-job-scrpt.yml -n namespace
+
+```
+
+### Refference
+
+1. [Opensource&me](https://github.com/justmeandopensource/kubernetes)
 
 
 [Back to Top](#contents)
