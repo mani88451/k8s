@@ -172,7 +172,19 @@ Client: 10.129.37.171:52116/ $
 
 To Perform Rolling update increase our no of replicas to 2 and make suree changes are recorded
 
-  
+ ```
+ oc scale deploy http-echo-deploy --replicas=2 -n test1234 --record
+ 
+ **Note**: --record to record our deployment update change histoy
+ ```
+ To see the histor
+ 
+ ```
+ oc rollout history deployment/http-echo-deploy -n test1234
+ ```
+ 
+ Now we can do changes in the deployment by updating newer version of image to how rolling update is happening
+ 
 
 
 
