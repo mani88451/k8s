@@ -216,6 +216,9 @@ Now we can do roll back to previous version
 oc rollout undo deployment/http-echo-deploy --to-revision=1 -n test1234
 ```
 
+[Back to Top](#contents)
+
+
 
 ### Statefullset Deployment
 
@@ -337,6 +340,9 @@ oc create -f http-echo-route.yml -n namespace
 
 ```
 
+[Back to Top](#contents)
+
+
 ### Job
 
 To create a normal task job
@@ -350,6 +356,8 @@ To create job based on some scripts
 oc create -f job-scrpt.yml -n namespace
 
 ```
+
+[Back to Top](#contents)
 
 
 ### Cron Job
@@ -366,9 +374,28 @@ oc create -f cron-job-scrpt.yml -n namespace
 
 ```
 
+[Back to Top](#contents)
+
 ### Refference
 
 1. [Opensource&me](https://github.com/justmeandopensource/kubernetes)
+2. [serviceexmp1](https://www.openshift.com/blog/kubernetes-services-by-example)
+3. [yamlexmp1](https://github.com/kubernetes/examples/tree/master/guestbook)
+4. [shellscriptexmpl1](https://www.shellscript.sh/quickref.html)
+5. [serviceexmpl2](https://kubernetes.io/docs/reference/kubectl/conventions/)
+6. [mobileiron](help.mobileiron.com)
+7. [NetApp](https://netapp-trident.readthedocs.io/en/stable-v19.07/kubernetes/concepts/objects.html#kubernetes-storageclass-objects)
+8. [Portworx](https://docs.portworx.com/reference/knowledge-base/etcd/#tuning-etcd)
+9. [Journalctl](https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs)
+10. [Vault](https://sites.google.com/site/mrxpalmeiras/vault-cheat-sheet)
+11. [Vault1](https://techsquad.rocks/blog/actually_using_vault_on_kubernetes)
+12. [Storage](https://kubernetes-csi.github.io/docs)
+13. [Networking](https://www.youtube.com/watch?v=y2bhV81MfKQ)
+14. [Networking2](https://www.youtube.com/watch?v=0Omvgd7Hg1I)
+15. [OpenshiftInstaller](https://github.com/openshift/installer/blob/master/docs/user/overview.md)
+16. [Tigera](https://www.tigera.io/video/tigera-calico-fundamentals?utm_source=linkedin&utm_medium=social&utm_content=calico-fundamental-video)
+17. [Imagestream](https://blog.openshift.com/image-streams-faq/)
+
 
 
 [Back to Top](#contents)
