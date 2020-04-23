@@ -186,6 +186,21 @@ To Perform Rolling update increase our no of replicas to 2 and make suree change
  Now we can do changes in the deployment by updating newer version of image to how rolling update is happening
  
 
+```
+oc set image deployment/http-echo-deploy http-echo=files.caas.ford.com/http-echo/http-echo:1.0.1 --record -n test1234
+```
+Verify the history to see the change
 
+```
+
+MGC12VCELXHTD6:retest rmanik20$ oc rollout history deployment/http-echo-deploy -n test1234
+deployments "http-echo-deploy"
+REVISION  CHANGE-CAUSE
+1         oc scale deploy http-echo-deploy --replicas=3 --namespace=test1234 --record=true
+2         oc set image deployment/http-echo-deploy http-echo=files.caas.ford.com/http-echo/http-echo:1.0.1 --record=true --namespace=test1234
+
+```
+
+Now we can do roll back to previous version
 
 [Back to Top](#contents)
