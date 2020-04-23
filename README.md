@@ -395,6 +395,7 @@ oc create -f cron-job-scrpt.yml -n namespace
 15. [OpenshiftInstaller](https://github.com/openshift/installer/blob/master/docs/user/overview.md)
 16. [Tigera](https://www.tigera.io/video/tigera-calico-fundamentals?utm_source=linkedin&utm_medium=social&utm_content=calico-fundamental-video)
 17. [Imagestream](https://blog.openshift.com/image-streams-faq/)
+18. [OpenshiftTips](https://openshift.tips/cluster)
 
 
 
