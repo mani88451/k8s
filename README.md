@@ -168,7 +168,12 @@ Client: 10.129.37.171:52116/ $
 ```
 # Curl PodIP with container Port and Service IP with service Port from local machine should give valid output
 ```
+We can create route object to provide URL based connection
 
+```
+oc create -f http-echo-route.yml -n namespace
+
+```
 ### Rolling Update
 
 To Perform Rolling update increase our no of replicas to 2 and make suree changes are recorded
@@ -322,6 +327,12 @@ Client: 10.129.37.171:52116/ $
 # Curl PodIP with container Port and Service IP with service Port from local machine should give valid output
 ```
 
+We can create route object to provide URL based connection
+
+```
+oc create -f http-echo-route.yml -n namespace
+
+```
 
 
 
